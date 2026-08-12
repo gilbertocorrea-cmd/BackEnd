@@ -26,7 +26,7 @@
 
 ## 🔴 Tecnologias
 
-![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=for-the-badge\&logo=javascript\&logoColor=red)
+![Java](https://img.shields.io/badge/JavaScript-111111?style=for-the-badge\&logo=javascript\&logoColor=red)
 ![Node.js](https://img.shields.io/badge/Node.js-111111?style=for-the-badge\&logo=node.js\&logoColor=red)
 
 ---
