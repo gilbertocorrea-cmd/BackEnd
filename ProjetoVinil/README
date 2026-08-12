@@ -1,26 +1,38 @@
-💿 PROJETO VINIL
-☕ Java • POO • Collections
-🎵 Sistema de Gerenciamento de Coleção de Discos
+<div align="center">
+
+# 💿 PROJETO VINIL
+
+### Sistema de Coleção de Discos de Vinil
+
+![Java](https://img.shields.io/badge/Java-17+-111111?style=for-the-badge\&logo=openjdk\&logoColor=red)
+![Console](https://img.shields.io/badge/Interface-Terminal-111111?style=for-the-badge\&logo=gnometerminal\&logoColor=red)
 
 </div>
 
-📌 Sobre o Projeto
+---
 
-Este projeto é um sistema simples de coleção de discos de vinil desenvolvido em Java.
+## 📖 Projeto Vinil
+
+Este projeto é um sistema simples de coleção de discos de vinil feito em Java.
 
 A aplicação funciona pelo terminal e permite:
 
-💿 Cadastrar um vinil
-🔎 Procurar um vinil pelo título
-📋 Listar todos os vinis cadastrados
-🚪 Sair do programa
+|    | Funcionalidade                     |
+| -- | ---------------------------------- |
+| 💿 | cadastrar um vinil;                |
+| 🔎 | procurar um vinil pelo título;     |
+| 📋 | listar todos os vinis cadastrados; |
+| 🚪 | sair do programa.                  |
 
 O projeto foi separado em partes para deixar cada classe responsável por uma função. Dessa forma, a manutenção fica mais fácil e, futuramente, a mesma lógica pode ser usada em uma interface gráfica ou em outro tipo de aplicação.
 
-⚙️ Como o Programa Funciona
+---
+
+## ⚙️ Como o programa funciona
 
 O fluxo principal do programa é:
 
+```text
 Main
  │
  ├── cria o Scanner
@@ -39,134 +51,157 @@ ConsoleUI
  │
  └── lista os vinis
          └── ColecaoService → Prateleira → List<Vinil>
-📂 Estrutura do Projeto
+```
+
+---
+
+## 📂 Estrutura do projeto
+
+```text
 ProjetoVinil/
 ├── Main.java
 ├── NOVAS FUNÇÕES.md
-│
 ├── model/
 │   ├── EstadoDeConservacao.java
 │   └── Vinil.java
-│
 ├── repositorio/
 │   └── Prateleira.java
-│
 ├── service/
 │   └── ColecaoService.java
-│
 └── ui/
     └── ConsoleUI.java
-🧩 Organização das Classes
-🚀 Main.java
+```
 
-É o ponto de entrada do programa, onde fica o método main.
+---
+
+## 🧩 Classes do projeto
+
+### `Main.java`
+
+É o ponto de entrada do programa, onde fica o método `main`.
 
 Nessa classe são criadas as dependências do sistema:
 
-Scanner, para ler o que o usuário digita;
-Prateleira, para guardar os vinis;
-ColecaoService, para controlar as operações da coleção;
-ConsoleUI, para conversar com o usuário.
+| # | Dependência      | Função                                  |
+| - | ---------------- | --------------------------------------- |
+| 1 | `Scanner`        | para ler o que o usuário digita;        |
+| 2 | `Prateleira`     | para guardar os vinis;                  |
+| 3 | `ColecaoService` | para controlar as operações da coleção; |
+| 4 | `ConsoleUI`      | para conversar com o usuário.           |
 
-O try-with-resources fecha automaticamente o Scanner quando o programa termina.
+O `try-with-resources` fecha automaticamente o `Scanner` quando o programa termina.
 
-💿 model/Vinil.java
+### `model/Vinil.java`
 
 Representa um disco de vinil.
 
-Foi usado um record, que cria automaticamente métodos de acesso como:
+Foi usado um `record`, que cria automaticamente métodos de acesso como:
 
+```java
 vinil.titulo();
 vinil.artista();
 vinil.ano();
 vinil.estadoDoVinil();
+```
 
 O construtor compacto valida os dados antes de criar o objeto:
 
-O título não pode ser null ou vazio;
-O artista não pode ser null ou vazio;
-O ano deve ser maior que zero;
-O estado de conservação é obrigatório.
+* o título não pode ser `null` ou vazio;
+* o artista não pode ser `null` ou vazio;
+* o ano deve ser maior que zero;
+* o estado de conservação é obrigatório.
 
-Quando uma regra não é atendida, é lançado um IllegalArgumentException usando throw.
+Quando uma regra não é atendida, é lançado um `IllegalArgumentException` usando `throw`.
 
-🎚️ model/EstadoDeConservacao.java
+### `model/EstadoDeConservacao.java`
 
-É um enum que representa os estados possíveis do vinil:
+É um `enum` que representa os estados possíveis do vinil:
 
+```text
 1 - NOVO
 2 - EXCELENTE
 3 - USADO
 4 - RARO
 5 - DANIFICADO
+```
 
-O método aPartirDaOpcao transforma a opção numérica digitada pelo usuário no valor correspondente do enum.
+O método `aPartirDaOpcao` transforma a opção numérica digitada pelo usuário no valor correspondente do `enum`. Se a opção não existir, o método lança uma exceção.
 
-Se a opção não existir, o método lança uma exceção.
-
-📚 repositorio/Prateleira.java
+### `repositorio/Prateleira.java`
 
 É a classe responsável por guardar e consultar os vinis.
 
-Os dados ficam em uma ArrayList:
+Os dados ficam em uma `ArrayList`:
 
+```java
 private final List<Vinil> discos = new ArrayList<>();
+```
 
 Essa classe possui três responsabilidades principais:
 
-Adicionar um vinil com add();
-Listar os vinis usando List.copyOf();
-Procurar um título usando stream(), filter() e findFirst().
+* adicionar um vinil com `add()`;
+* listar os vinis usando `List.copyOf()`;
+* procurar um título usando `stream()`, `filter()` e `findFirst()`.
 
-O método de busca usa equalsIgnoreCase(), por isso a pesquisa não diferencia letras maiúsculas e minúsculas.
+O método de busca usa `equalsIgnoreCase()`, por isso a pesquisa não diferencia letras maiúsculas e minúsculas. O `trim()` remove espaços no início e no final do título pesquisado.
 
-O trim() remove espaços no início e no final do título pesquisado.
+O retorno da busca é um `Optional<Vinil>`, pois o título pode existir ou não na coleção.
 
-O retorno da busca é um Optional<Vinil>, pois o título pode existir ou não na coleção.
-
-⚙️ service/ColecaoService.java
+### `service/ColecaoService.java`
 
 É a camada de serviço do sistema.
 
-Ela liga a interface do usuário ao repositório. A ConsoleUI não precisa acessar diretamente a lista de vinis: ela chama o serviço, e o serviço conversa com a Prateleira.
+Ela liga a interface do usuário ao repositório. A `ConsoleUI` não precisa acessar diretamente a lista de vinis: ela chama o serviço, e o serviço conversa com a `Prateleira`.
 
 As operações disponíveis são:
 
-cadastrar(...) — cria um Vinil e envia para a prateleira;
-procurarPorTitulo(...) — delega a busca para a prateleira;
-listar() — devolve todos os vinis cadastrados.
-🖥️ ui/ConsoleUI.java
+| Método                   | Operação                                   |
+| ------------------------ | ------------------------------------------ |
+| `cadastrar(...)`         | cria um `Vinil` e envia para a prateleira; |
+| `procurarPorTitulo(...)` | delega a busca para a prateleira;          |
+| `listar()`               | devolve todos os vinis cadastrados.        |
+
+### `ui/ConsoleUI.java`
 
 É a parte responsável pela interação com o usuário no terminal.
 
-O menu principal usa do-while para ser exibido pelo menos uma vez. O programa continua funcionando até o usuário digitar a opção 9.
+O menu principal usa `do-while` para ser exibido pelo menos uma vez. O programa continua funcionando até o usuário digitar a opção `9`.
 
 Os métodos de leitura também fazem o tratamento das entradas:
 
-lerTexto(...) não aceita texto vazio;
-lerInteiro(...) tenta converter a entrada para inteiro;
-lerEstado() repete a pergunta caso o estado escolhido seja inválido.
+* `lerTexto(...)` não aceita texto vazio;
+* `lerInteiro(...)` tenta converter a entrada para inteiro;
+* `lerEstado()` repete a pergunta caso o estado escolhido seja inválido.
 
-O try/catch em cadastrarVinil() captura os erros de validação do Vinil e mostra a mensagem para o usuário.
+O `try/catch` em `cadastrarVinil()` captura os erros de validação do `Vinil` e mostra a mensagem para o usuário.
 
-▶️ Como Executar
+---
 
-É necessário utilizar uma versão do Java que suporte record, isBlank() e o switch com setas.
+## ▶️ Como executar
 
-Java 17 ou superior é recomendado.
+É necessário utilizar uma versão do Java que suporte `record`, `isBlank()` e o `switch` com setas. O Java 17 ou superior é recomendado.
 
 Na pasta raiz do projeto, compile os arquivos:
 
+```bash
 javac -d out ProjetoVinil/Main.java \
   ProjetoVinil/model/*.java \
   ProjetoVinil/repositorio/*.java \
   ProjetoVinil/service/*.java \
   ProjetoVinil/ui/*.java
+```
 
 Depois, execute:
 
+```bash
 java -cp out ProjetoVinil.Main
-💻 Exemplo de Uso
+```
+
+---
+
+## 🖥️ Exemplo de uso
+
+```text
 ======= COLEÇÃO DE VINIS =======
 1 - Cadastrar vinil
 2 - Procurar vinil
@@ -192,39 +227,37 @@ Escolha uma opção
 2
 
 Vinil cadastrado com sucesso.
-🧠 Conceitos de Java Utilizados
+```
 
+---
 
-
+## ☕ Conceitos de Java utilizados
 
 Este projeto pratica os seguintes conceitos:
 
-Classes e objetos
-Pacotes
-Construtor
-record
-enum
-ArrayList e List
-Optional
-stream, filter e findFirst
-while, do-while e for-each
-switch com ->
-try/catch
-throw
-final
-trim(), isBlank(), isEmpty() e equalsIgnoreCase()
-Composição entre objetos
-Separação de responsabilidades
-💾 Armazenamento dos Dados
+| Conceitos                 | Recursos                                                   |
+| ------------------------- | ---------------------------------------------------------- |
+| classes e objetos;        | `ArrayList` e `List`;                                      |
+| pacotes;                  | `Optional`;                                                |
+| construtor;               | `stream`, `filter` e `findFirst`;                          |
+| `record`;                 | `while`, `do-while` e `for-each`;                          |
+| `enum`;                   | `switch` com `->`;                                         |
+| `try/catch`;              | `throw`;                                                   |
+| `final`;                  | `trim()`, `isBlank()`, `isEmpty()` e `equalsIgnoreCase()`; |
+| composição entre objetos; | separação de responsabilidades.                            |
 
-Os vinis ficam armazenados apenas em memória, dentro da ArrayList da Prateleira.
+---
 
-Por isso, quando o programa é encerrado, os dados cadastrados são perdidos.
+## 💾 Observação sobre os dados
 
-Uma próxima evolução seria conectar o repositório a um arquivo ou banco de dados.
+Os vinis ficam armazenados apenas em memória, dentro da `ArrayList` da `Prateleira`. Por isso, quando o programa é encerrado, os dados cadastrados são perdidos. Uma próxima evolução seria conectar o repositório a um arquivo ou banco de dados.
+
+---
 
 <div align="center">
 
-💿 JAVA • CODE • MUSIC
+### 💿 JAVA • POO • COLLECTIONS
+
+**Fatec Arthur de Azevedo**
 
 </div>
