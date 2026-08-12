@@ -23,11 +23,14 @@
 ⚡ Exercícios, exemplos, atividades e projetos desenvolvidos durante o semestre.
 
 ---
-
 ## 🔴 Tecnologias
 
-![Java](https://img.shields.io/badge/JavaScript-111111?style=for-the-badge\&logo=javascript\&logoColor=red)
-![Node.js](https://img.shields.io/badge/Node.js-111111?style=for-the-badge\&logo=node.js\&logoColor=red)
+![Java](https://img.shields.io/badge/Java-111111?style=for-the-badge\&logo=openjdk\&logoColor=red)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-111111?style=for-the-badge\&logo=springboot\&logoColor=red)
+![React](https://img.shields.io/badge/React-111111?style=for-the-badge\&logo=react\&logoColor=red)
+
+---
+
 
 ---
 
