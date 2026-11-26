@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="470" viewBox="0 0 1600 470" role="img" aria-label="BACKEND LAB - JAVA • SPRING BOOT • APIs • PERSISTÊNCIA">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#040917"/><stop offset=".58" stop-color="#081326"/><stop offset="1" stop-color="#02050d"/></linearGradient>
+ <linearGradient id="beam" x1="0" x2="1"><stop stop-color="#64ff70" stop-opacity="0"/><stop offset=".5" stop-color="#64ff70"/><stop offset="1" stop-color="#06b6d4" stop-opacity="0"/></linearGradient>
+ <linearGradient id="box" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#64ff70" stop-opacity=".2"/><stop offset="1" stop-color="#06b6d4" stop-opacity=".05"/></linearGradient>
+ <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#64ff70" stroke-opacity=".065" stroke-width="1"/></pattern>
+ <filter id="glow" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1600" height="470" fill="url(#bg)"/><rect width="1600" height="470" fill="url(#grid)"/>
+<g opacity=".85" fill="none" stroke="#64ff70" stroke-width="2"><path d="M0 52H180l25 22h305"/><path d="M1600 52h-170l-25 22h-150"/><path d="M0 420h260l42-28h200"/><path d="M1600 420h-240l-42-28h-145"/></g>
+<path d="M80 118h1180l28 28v176l-28 28H80l-28-28V146Z" fill="url(#box)" stroke="#64ff70" stroke-opacity=".6" stroke-width="2"/>
+<path d="M98 134H1226" stroke="url(#beam)" stroke-width="3" filter="url(#glow)"/>
+<g opacity=".35" fill="none" stroke="#64ff70" stroke-width="2"><circle cx="1350" cy="227" r="118"/><circle cx="1350" cy="227" r="91"/><circle cx="1350" cy="227" r="60"/><path d="M1220 227h260M1350 98v258"/></g>
+<rect x="1280" y="161" width="140" height="130" rx="20" fill="#071120" stroke="#06b6d4" stroke-width="3"/>
+<text x="1350" y="243" text-anchor="middle" fill="#64ff70" font-family="DejaVu Sans, Arial, sans-serif" font-size="39" font-weight="800" filter="url(#glow)">API</text>
+<text x="92" y="100" fill="#64ff70" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" letter-spacing="5">SYSTEM // BACKEND / FATEC</text>
+<text x="92" y="240" fill="#f3f9ff" font-family="DejaVu Sans, Arial, sans-serif" font-size="65" font-weight="800" letter-spacing="1">BACKEND LAB</text>
+<path d="M92 262H1085" stroke="url(#beam)" stroke-width="3" filter="url(#glow)"/>
+<text x="92" y="310" fill="#64ff70" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" letter-spacing="2">JAVA • SPRING BOOT • APIs • PERSISTÊNCIA</text>
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="600"><rect x="92" y="367" width="212" height="36" rx="18" fill="#06131e" stroke="#64ff70" stroke-opacity=".8"/><text x="198" y="390" text-anchor="middle" fill="#f3f9ff">PROJECT DOCUMENTATION</text><rect x="319" y="367" width="160" height="36" rx="18" fill="#06131e" stroke="#06b6d4"/><text x="399" y="390" text-anchor="middle" fill="#f3f9ff">FATEC • ADS</text></g>
+<g fill="#64ff70" opacity=".6"><circle cx="66" cy="37" r="4"/><circle cx="85" cy="37" r="4"/><circle cx="104" cy="37" r="4"/></g>
+<text x="1515" y="448" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" fill="#64ff70" opacity=".65">GILBERTO CORRÊA // REPOSITORY</text>
+</svg>
