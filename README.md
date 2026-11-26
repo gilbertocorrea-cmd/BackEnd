@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="./docs/project-banner.svg" width="100%" alt="Banner BACKEND LAB">
+</div>
+
+<div align="center">
 
 # B A C K E N D　//　J A V A　L A B
 
